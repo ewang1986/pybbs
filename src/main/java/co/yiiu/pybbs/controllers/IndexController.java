@@ -124,7 +124,6 @@ public class IndexController extends BaseController {
     accessToken.setToken(token);
     accessToken.setUserId(user.getId());
     accessToken.setInTime(new Date());
-
     map.put("token", accessToken);
     accessTokenService.save(accessToken);
     return Result.success(map);
