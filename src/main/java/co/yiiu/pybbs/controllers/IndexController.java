@@ -109,7 +109,6 @@ public class IndexController extends BaseController {
   public Result register(String username, String password) {
     ApiAssert.isTrue(stringUtil.check(username, stringUtil.usernameRegex), "用户名只能输入[0-9a-zA-Z]，长度4-16位");
     ApiAssert.isTrue(stringUtil.check(password, stringUtil.passwordRegex), "密码只能输入[0-9a-zA-Z]，长度6-32位");
-
     Map<String, Object> map = new HashMap<>();
     User user = userService.findByUsername(username);
     ApiAssert.isNull(user, "用户名已经存在");
